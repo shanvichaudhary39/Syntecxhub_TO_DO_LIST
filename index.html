@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="list-header">
+      <div>
+        <p class="eyebrow">A small place for today</p>
+        <h1>Little List <span aria-hidden="true">✦</span></h1>
+      </div>
+      <div class="date-stamp" id="today"></div>
+    </header>
+
+    <section class="add-card" aria-labelledby="add-heading">
+      <h2 id="add-heading">What needs doing?</h2>
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">New task</label>
+        <input id="task-input" name="task" type="text" placeholder="e.g. water the plants" autocomplete="off" maxlength="120" required>
+        <button type="submit" class="add-button"><span aria-hidden="true">+</span> Add task</button>
+      </form>
+    </section>
+
+    <section class="tasks-section" aria-labelledby="tasks-heading">
+      <div class="section-heading">
+        <h2 id="tasks-heading">Today's list</h2>
+        <span id="task-count" class="task-count">0 things</span>
+      </div>
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <div id="empty-state" class="empty-state">
+        <span class="empty-icon" aria-hidden="true">☕</span>
+        <p>Nothing on the list yet.<br>Take a breath, then add one thing.</p>
+      </div>
+    </section>
+
+    <footer class="list-footer">
+      <span>Keep it doable.</span>
+      <button id="clear-completed" class="text-button" type="button">Clear completed</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
